@@ -44,7 +44,7 @@ jobs:
           docker build -t ${{ env.LOCAL_TAG }} --file ${{ matrix.dockerfile }} ${{ matrix.context }}
 
       - name: Get versions
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         id: get-versions
         with:
           script: |
@@ -86,7 +86,7 @@ jobs:
     needs: build-and-push
     steps:
       - name: Create tag
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             try {
